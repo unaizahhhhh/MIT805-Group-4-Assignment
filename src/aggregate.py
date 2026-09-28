@@ -102,7 +102,7 @@ def origin_airport_summary(df, min_flights=5000):
     )
 
 def carrier_delay_percentiles(df):
-    result = (
+    return (
         df.groupBy("OP_CARRIER")
           .agg(
               F.expr("percentile_approx(ARR_DELAY, 0.5)").alias("median_delay"),
@@ -111,4 +111,4 @@ def carrier_delay_percentiles(df):
           )
           .orderBy(F.desc("median_delay"))
     )
-    return result
+d
