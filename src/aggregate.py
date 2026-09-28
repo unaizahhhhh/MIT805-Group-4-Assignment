@@ -111,3 +111,30 @@ def carrier_delay_percentiles(df):
           )
           .orderBy(F.desc("median_delay"))
     )
+
+def delay_by_carrier_rdd(df):
+    """
+    Explicit low-level RDD MapReduce demonstration.
+
+    Same result as carrier_delay_summary()'s average delay column,
+    but implemented via raw map -> reduceByKey rather than the
+    DataFrame API, to show the underlying MapReduce mechanics that
+    groupBy().agg() abstracts away.
+    """
+    # Map: emit (carrier, (delay, 1)) pairs — row-level, fully parallel
+    pair_rdd = df.select("OP_CARRIER", "ARR_DELAY").rdd.map(
+        lambda row: (row["OP_CARRIER"], (row["ARR_DELAY"], 1))
+    )
+
+    # Shuffle + Reduce: combine values sharing a key. This is where
+    # Spark redistributes data across partitions by key.
+    reduced = pair_rdd.reduceByKey(
+        lambda a, b: (a[0] + b[0], a[1] + b[1])
+    )
+
+    # Final map: compute the average from (sum, count)
+    avg_delay_by_carrier = reduced.map(
+        lambda kv: (kv[0], round(kv[1][0] / kv[1][1], 2))
+    )
+
+    return avg_delay_by_carrier
