@@ -111,4 +111,3 @@ def carrier_delay_percentiles(df):
           )
           .orderBy(F.desc("median_delay"))
     )
-d
