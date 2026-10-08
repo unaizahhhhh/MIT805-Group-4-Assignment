@@ -6,7 +6,7 @@
 
 - **Name:** Multi-modal Flight Delay Dataset (MFDD / Aeolus), `Flight_Tab` tabular component
 - **Source:** Kaggle, https://www.kaggle.com/datasets/flnny123/mfddmulti-modal-flight-delay-dataset
-- **Licence / terms of use:** <licence from the Kaggle page, or "none stated; used for academic purposes only">
+- **Licence / terms of use:** Apache License 2.0 (as stated on the Kaggle dataset page)
 - **Contents:** US domestic flight records joined with origin and destination weather. The full dataset is also published with flight-chain and flight-network graph modalities; only the tabular `Flight_Tab` data is used here.
 - **Collection period used:** 2016 to 2024
 - **Last updated / published:** <date shown on the Kaggle page>
