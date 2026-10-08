@@ -87,3 +87,6 @@ Full-dataset actions (counts, grouped aggregations) can take several minutes on 
 ## Data and Ethics
 
 Only publicly available data is used, and it contains no personally identifiable information. The original dataset remains the property of its creators; refer to the Kaggle page for licence terms.
+
+## Video Demonstration
+[Watch the MIT805 project demonstration video](https://docs.google.com/document/d/1fXdER12bmxIVsMoMKMst8C-XUo6F1anLgMcY5sJTYE8/edit?usp=drive_link)
