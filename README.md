@@ -20,7 +20,7 @@ Flight delays are costly for airlines, airports and passengers, and weather is o
 
 - **Name:** Multi-modal Flight Delay Dataset (MFDD / Aeolus), `Flight_Tab` tabular component
 - **Source:** Kaggle, `flnny123/mfddmulti-modal-flight-delay-dataset`
-- **License / terms:** `<confirm licence from the Kaggle dataset page>`
+- **License / terms:** Apache License 2.0 (as stated on the Kaggle dataset page)
 - **Sizes:** raw dataset ≈ 42 GB; working dataset (`Flight_Tab` CSV) ≈ 15 GB; processing dataset (2016–2024 snappy parquet, ≈ 2.4 GB on disk, larger once decompressed in Spark memory)
 - **Format used:** parquet, split into one folder per year (`data/flight_with_weather_<YEAR>/`)
 - **Key fields:** flight date, carrier, origin/destination, departure/arrival delay, and origin/destination temperature, precipitation and wind speed
